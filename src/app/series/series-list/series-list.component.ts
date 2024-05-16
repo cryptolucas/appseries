@@ -10,13 +10,32 @@ import { SerieService } from '../serie.service';
 export class SeriesListComponent implements OnInit {
 
   series: Array<Serie> = [];
+  totalTemporadas: number = 0;
+
+  selected: Boolean = false;
+  selectedSerie!: Serie;
 
   constructor(private serieService: SerieService) { }
 
   getSeries(): void {
     this.serieService.getSeries().subscribe((series) => {
       this.series = series;
+      this.calcularPromedioTemporadas();
     });
+  }
+
+  onSelected(serie: Serie): void {
+    this.selected = true;
+    this.selectedSerie = serie;
+  }
+
+  calcularPromedioTemporadas() {
+
+    let totalTemporadas = 0;
+    for (const serie of this.series) {
+      totalTemporadas += serie.seasons; // Sumamos las temporadas de cada serie
+    }
+    this.totalTemporadas = totalTemporadas / this.series.length; // Calculamos el promedio
   }
 
   ngOnInit() {

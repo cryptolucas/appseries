@@ -1,0 +1,27 @@
+<div class="container-fluid">
+  <p class="h3 p-3">{{ serieDetail.name}}</p>
+  <div class="row">
+    <div class="col-2">
+      <div class="thumb">
+        <img
+          class="img-fluid"
+          src="{{ serieDetail.poster }}"
+          alt="{{ serieDetail.id }}"
+        />
+      </div>
+    </div>
+    <div class="col">
+      <dl>
+    
+        <dt>Description</dt>
+        <dd>{{ serieDetail.description }}</dd>
+        <hr />
+        <dt>Enlace</dt>
+        <dd><a href="{{ serieDetail.webpage }}">{{ serieDetail.webpage }}</a></dd>
+        <hr />
+        
+
+      </dl>
+    </div>
+  </div>
+ </div>

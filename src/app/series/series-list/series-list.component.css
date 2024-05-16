@@ -3,3 +3,21 @@ img {
     width: auto;
     max-width: 400px;
    }
+
+.link-like {
+    color: blue; /* Cambia el color del texto para que se parezca a un enlace */
+    text-decoration: underline; /* Añade subrayado para simular un enlace */
+    cursor: pointer; /* Cambia el cursor cuando pasa sobre el elemento */
+  }
+
+  .container {
+    position: relative; /* Establece el contenedor como posición relativa */
+  }
+  
+  .app-series-detail-container {
+    position: absolute; /* Establece el componente como posición absoluta */
+    top: 0; /* Alinea el componente con la parte superior del contenedor */
+    right: 0; /* Lo desplaza completamente hacia la derecha */
+    width: calc(50% - 15px); /* Ancho del componente (la mitad del contenedor menos el padding) */
+    padding-left: 15px; /* Añade un poco de espacio entre la tabla y el componente */
+  }
